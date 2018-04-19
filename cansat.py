@@ -1,7 +1,6 @@
 
 #Cansat.py 
 #Programa que recoge los datos de un .log
-
 import re
 
 def ReadLog():
@@ -13,15 +12,15 @@ def ReadLog():
 	testLogLines = []
 
 	#Se recorre todo el documento para conocer el número de líneas que tiene
-	for line in open("record1.log").readlines(): 
+	for line in open("Conmovimiento.log").readlines(): 
 		count += 1
 
 
 	#Este for recorre todo el documento desde la linea desde la línea 3 (donde empieza la información)
-	testLog = open("record1.log","r")
-	for i, line in enumerate(testLog,1):
+	testLog = open("Conmovimiento.log","r")
+	for i, line in enumerate(testLog,0):
 		#
-		if i in range(3,count): 
+		if i in range(2,count + 1): 
 			#Los elementos se agregan desde la línea 34 donde esta el HEX.#Los elementos se agregan desde la línea 34 donde esta el HEX.
 			linea = re.split('RECV,',line)
 			testLogLines.append(linea[1])
