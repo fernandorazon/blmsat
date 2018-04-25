@@ -11,7 +11,7 @@ ax = []
 ay = []
 az = []
 orientacion = []
-ox =[]
+orientacionFloat =[]
 oy = []
 oz =[]
 a = []
@@ -101,21 +101,17 @@ aceleracion = getAcData(testLogLineString)
 orientacion = getOrData(testLogLineString)
 altura = getAlData(testLogLineString)
 
+
 for i in aceleracion:
 	for j in i:
-
-		ax.append(i[0])
-		ay.append(i[1])
-		az.append(i[2])
+		if isinstance(j, float):
+			ax.append(i[0])
+			ay.append(i[1])
+			az.append(i[2])
 
 for i in orientacion:
 	for j in i:
-		ox.append(i[0])
-		oy.append(i[1])
-		oz.append(i[2])
+		if isinstance(j, float):
+			orientacionFloat.append(i)
 
 
-print(ox)
-
-
-print(aceleracion)
