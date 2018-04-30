@@ -3,7 +3,7 @@
 #Programa que recoge los datos de un .log
 import re
 
-def ReadLog():
+def ReadLog(fileName):
 
 	#Declaro variables auxiliares locales
 	a = ""
@@ -12,12 +12,12 @@ def ReadLog():
 	testLogLines = []
 
 	#Se recorre todo el documento para conocer el número de líneas que tiene
-	for line in open("Conmovimiento.log").readlines(): 
+	for line in open(fileName).readlines(): 
 		count += 1
 
 
 	#Este for recorre todo el documento desde la linea desde la línea 3 (donde empieza la información)
-	testLog = open("Conmovimiento.log","r")
+	testLog = open(fileName,"r")
 	for i, line in enumerate(testLog,0):
 		#
 		if i in range(2,count + 1): 
@@ -38,7 +38,7 @@ def ReadLog():
 	return testLogLineString
 
 #Aquí mando llamar a la funcion que se ejecuta sobre el log de prueba
-testLogLineString = ReadLog()
+#testLogLineString = ReadLog("ConcursoBalamsat.log")
 
 
 
